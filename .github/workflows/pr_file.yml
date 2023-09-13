@@ -1,0 +1,23 @@
+name: pr-file
+on: pull_request 
+jobs:
+  example:
+    name: example
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: mkdir -p output/
+      - run: echo "This is fancy a comment" > File/results.txt
+      - uses: actions/upload-artifact@v1
+        with:
+          name: results
+          path: File
+      - uses: actions/download-artifact@v1
+        with:
+          name: results
+      - name: comment PR
+        uses: machine-learning-apps/pr-comment@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          path: results/results.txt
