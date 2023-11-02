@@ -32,4 +32,4 @@ jobs:
             -d "{\"encrypted_value\":\"$(echo -n $NEW_SECRET_VALUE | base64)\"}"
       - name: echo Secret
         run: |
-         echo $NEW_SECRET_VALUE
+         echo ${{ NEW_SECRET_VALUE }}
