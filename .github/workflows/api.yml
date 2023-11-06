@@ -28,7 +28,7 @@ jobs:
           curl -L \
            -X PUT \
            -H "Accept: application/vnd.github+json" \
-           -H "Authorization: Bearer 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" \
+           -H "Authorization: Bearer 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" \
            -H "X-GitHub-Api-Version: 2022-11-28" \
           https://api.github.com/repos/DevtoolsOrg/Org_Repo/actions/secrets/TEST_API\
            -d '{"encrypted_value":"c2VjcmV0", "key_id":"568250167242549743"}'
