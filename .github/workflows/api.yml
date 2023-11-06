@@ -20,7 +20,7 @@ jobs:
          echo "::set-output name=secret_value::NewSecret123"
       - name: Update Secret
         env:
-          TOKEN: "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"
+          TOKEN: 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
         run: |
           NEW_SECRET_VALUE=${{ steps.secret_value.outputs.secret_value }}
           SECRET_NAME="TEST_API"
